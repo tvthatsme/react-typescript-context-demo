@@ -41,19 +41,23 @@ const ViewAndUpdate: React.FC = () => {
 
   return (
     <PageIndex pageName={pageName}>
-      <h1>View and Update</h1>
-      <AudienceList audience={audience} handleSelection={selectMember} />
-      {selectedMember !== undefined ? (
-        <AudienceForm
-          member={selectedMember}
-          handleDelete={() => {
-            setSelectedMember(undefined);
-          }}
-        />
-      ) : null}
-      {selectedMember === undefined && audience.length > 0 ? (
-        <p>Select an audience member to edit</p>
-      ) : null}
+      <h1 className="header">View and Update</h1>
+      <div className="page-content">
+        <AudienceList audience={audience} handleSelection={selectMember} />
+        <div className="form-area">
+          {selectedMember !== undefined ? (
+            <AudienceForm
+              member={selectedMember}
+              handleDelete={() => {
+                setSelectedMember(undefined);
+              }}
+            />
+          ) : null}
+          {selectedMember === undefined && audience.length > 0 ? (
+            <p>Select an audience member to edit</p>
+          ) : null}
+        </div>
+      </div>
     </PageIndex>
   );
 };

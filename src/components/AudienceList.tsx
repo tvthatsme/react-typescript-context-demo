@@ -25,22 +25,28 @@ const AudienceList = ({ audience, handleSelection }: AudienceListProps) => {
 
   if (sortedByFirstName.length > 0) {
     return (
-      <ul>
-        {sortedByFirstName.map(member => {
-          return (
-            <li key={member.id}>
-              <div onClick={() => handleSelection(member)}>
-                <p>{member.firstName}</p>
-                <p>{member.lastName}</p>
-                <p>{member.email}</p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="audience-list">
+        <ul className="list">
+          {sortedByFirstName.map(member => {
+            return (
+              <li key={member.id} className="audience-member">
+                <div onClick={() => handleSelection(member)}>
+                  <p className="audience-name">{member.firstName}</p>
+                  <p className="audience-name">{member.lastName}</p>
+                  <p className="audience-email">{member.email}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   } else {
-    return <p>There is nobody in your audience yet.</p>;
+    return (
+      <div className="audience-list">
+        <p>There is nobody in your audience yet.</p>
+      </div>
+    );
   }
 };
 

@@ -139,11 +139,17 @@ const AudienceForm = ({ member, handleDelete }: AudienceFormProps) => {
         />
       </div>
       {isEdit && (
-        <button type="button" onClick={deleteMember}>
+        <button
+          type="button"
+          className="button button--secondary"
+          onClick={deleteMember}
+        >
           Delete
         </button>
       )}
-      <button type="submit">{isEdit ? 'Update' : 'Add'}</button>
+      <button type="submit" className="button">
+        {isEdit ? 'Update' : 'Add'}
+      </button>
       {showConfirm && <p>{confirmationMessage}</p>}
     </form>
   );

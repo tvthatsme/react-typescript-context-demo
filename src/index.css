@@ -3,11 +3,126 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(
+    to right bottom,
+    #006aff,
+    #a356e4,
+    #da43be,
+    #f64196,
+    #ff5472
+  );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+label {
+  display: block;
+}
+
+input[type='text'],
+input[type='email'] {
+  height: 40px;
+  width: calc(100% - 22px);
+  border: 1px solid #454555;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 0 10px;
+  margin: 5px 0 15px;
+}
+
+.button {
+  display: inline-block;
+  height: 40px;
+  background: #006aff;
+  border: 1px solid #006aff;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 0 20px;
+  min-width: 200px;
+  margin: 10px 20px 10px 0;
+}
+
+.button--secondary {
+  height: 40px;
+  background: #fff;
+  color: #006aff;
+  border: 1px solid #006aff;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.navigation {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.page {
+  display: grid;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  grid-template-rows: 60px 60px calc(100vh - 120px);
+}
+
+.header {
+  height: 60px;
+  margin: 0;
+  padding: 0 20px;
+  color: white;
+}
+
+.navigation-link {
+  color: #fff;
+}
+
+.audience-list {
+  background: #fff;
+  overflow-y: scroll;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.page-content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-column-gap: 10px;
+  margin: 0 20px 20px;
+}
+
+.page-content--reverse {
+  grid-template-columns: 3fr 2fr;
+}
+
+.form-area {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.audience-member:hover {
+  cursor: pointer;
+}
+
+.audience-name {
+  display: inline;
+  margin-right: 5px;
+}
+
+.audience-email {
+  display: block;
+  margin-top: 5px;
 }

@@ -28,18 +28,21 @@ const PageIndex = ({ children, pageName }: PageProps) => {
 
   // Show the page if the current page matches, otherwise hide this page
   return currentPage === pageName ? (
-    <div>
-      {otherPages.map(page => (
-        <a
-          key={page}
-          href={page}
-          onClick={(event: React.MouseEvent) => {
-            handleLinkClick(event, page);
-          }}
-        >
-          {page}
-        </a>
-      ))}
+    <div className="page">
+      <div className="navigation">
+        {otherPages.map(page => (
+          <a
+            key={page}
+            href={page}
+            onClick={(event: React.MouseEvent) => {
+              handleLinkClick(event, page);
+            }}
+            className="navigation-link"
+          >
+            {page}
+          </a>
+        ))}
+      </div>
       {children}
     </div>
   ) : null;

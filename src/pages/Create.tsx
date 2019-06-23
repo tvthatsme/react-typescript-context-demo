@@ -10,8 +10,13 @@ const pageName = Page.CREATE;
 const Create: React.FC = () => {
   return (
     <PageIndex pageName={pageName}>
-      <h1>Create</h1>
-      <AudienceForm />
+      <h1 className="header">Create</h1>
+      <div className="page-content page-content--reverse">
+        <div className="form-area form-area--left">
+          <AudienceForm />
+        </div>
+        <div />
+      </div>
     </PageIndex>
   );
 };
